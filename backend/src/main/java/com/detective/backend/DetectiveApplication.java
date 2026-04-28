@@ -1,0 +1,13 @@
+package com.detective.backend;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@SpringBootApplication
+@EnableScheduling
+public class DetectiveApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DetectiveApplication.class, args);
+    }
+}

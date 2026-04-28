@@ -1,0 +1,33 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Gradle/Java build
+.gradle/
+.gradle/**
+.gradle-home/
+build/
+bin/
+out/
+
+# Logs and temp
+*.log
+*.tmp
+*.swp
+hs_err_pid*
+
+# Local data / dumps
+profile_dump.txt
+backend-log.txt
+test.json
+*.mv.db
+*.lock.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local env
+.env
+.env.*

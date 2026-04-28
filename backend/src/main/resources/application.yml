@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: detective-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/inv_db
+    username: inv_user
+    password: inv_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: detective-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
+  ai:
+    openai:
+      api-key: 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
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: nvidia/nemotron-3-super-120b-a12b:free
+
+app:
+  kafka:
+    topics:
+      clue-reveals: clue-reveals-topic
+
+

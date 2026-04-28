@@ -1,0 +1,13 @@
+*
+
+.idea/
+
+!.gitignore
+!README.md
+!LICENSE.md
+
+!backend/
+!frontend/
+
+!backend/**
+!frontend/**
